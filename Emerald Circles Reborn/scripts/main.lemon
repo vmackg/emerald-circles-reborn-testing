@@ -1,0 +1,50 @@
+#if STANDALONE
+function bool Standalone.onWriteToSpriteTable(s16 px, s16 py, u16 renderQueue)
+{
+	u64 key = 0
+	u8 gameMode = global.game_mode & 0x7f
+	bool prioFlag = (objA0.sprite_attributes & 0x8000) != 0x00
+	u8 flags = prioFlag ? SPRITE_FLAG_PRIO : 0x00
+
+    if (u8[0xffffb000 + 0x20] == (char.state.TRANSFORMING || char.state.TAILS_TRANSFORM) || u8[0xffffb04a + 0x20] == (char.state.TRANSFORMING || char.state.TAILS_TRANSFORM))
+    {
+        if (global.chaos_emeralds >= 7)
+        {
+            if (Mods.isModActive("Side View Chaos Emeralds"))
+            {
+                if (character == CHARACTER_SONIC)
+                {
+                    // five frame side view circle goes here
+                }
+                else
+                {
+                    // four frame side view circle goes here
+                }
+            }
+            else
+            {
+                if (character == CHARACTER_SONIC)
+                {
+                    // five frame regular emerald circle goes here
+                }
+                else
+                {
+                    // four frame regular emerald circle goes here
+                }
+            }
+        }
+        else if (global.super_emeralds >= 7)
+        {
+            if (character == CHARACTER_SONIC)
+            {
+                // five frame super emerald circle goes here
+            }
+            else
+            {
+                // four frame super emerald circle goes here
+            }
+        }
+    }
+    return base.Standalone.onWriteToSpriteTable(px, py, renderQueue)
+}
+#endif
