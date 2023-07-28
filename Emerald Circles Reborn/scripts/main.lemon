@@ -12,7 +12,7 @@ function bool Standalone.onWriteToSpriteTable(s16 px, s16 py, u16 renderQueue)
         {
             if (Mods.isModActive("Side View Chaos Emeralds"))
             {
-                if (character == CHARACTER_SONIC)
+                if (char.character == CHARACTER_SONIC)
                 {
                     // five frame side view circle goes here
                 }
@@ -35,7 +35,7 @@ function bool Standalone.onWriteToSpriteTable(s16 px, s16 py, u16 renderQueue)
         }
         else if (global.super_emeralds >= 7)
         {
-            if (character == CHARACTER_SONIC)
+            if (char.character == CHARACTER_SONIC)
             {
                 // five frame super emerald circle goes here
             }
