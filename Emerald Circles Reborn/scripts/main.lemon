@@ -23,7 +23,7 @@ function bool Standalone.onWriteToSpriteTable(s16 px, s16 py, u16 renderQueue)
             }
             else
             {
-                if (character == CHARACTER_SONIC)
+                if (char.character == CHARACTER_SONIC)
                 {
                     // five frame regular emerald circle goes here
                 }
